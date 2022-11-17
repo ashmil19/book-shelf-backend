@@ -24,7 +24,7 @@ SECRET_KEY = 'django-insecure-#zzmanmwo)#^7*w8=vt%p6_-o&res9uqdwdsve)zi@q7)w#yct
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['book-shelf-backend-production.up.railway.app', '127.0.0:1']
 
 # Application definition
 
