@@ -33,6 +33,17 @@ def add_book(request):
     return Response(serializer.data)
 
 
+@api_view(['PUT'])
+def update_book(request, pk):
+    book = Books.objects.get(id=pk)
+    serializer = BooksSerializer(book, data=request.data)
+
+    if serializer.is_valid():
+        serializer.save()
+
+    return Response(serializer.data)
+
+
 @api_view(['DELETE'])
 def delete_book(request, pk):
     book = Books.objects.get(id=pk)
