@@ -8,6 +8,18 @@ from .serializers import *
 # Create your views here.
 
 @api_view(['GET'])
+def api_overview(request):
+    api_urls = {
+        'All Books': '/all-books/',
+        'Book': '/book/<str:pk>/',
+        'Add Book': '/add-book/',
+        'Update Book': '/update-book/<str:pk>/',
+        'Delete Book': '/delete-book/<str:pk>/'
+    }
+    return Response(api_urls)
+
+
+@api_view(['GET'])
 def get_all_books(request):
     books = Books.objects.all()
     serializer = BooksSerializer(books, many=True)

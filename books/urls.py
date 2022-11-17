@@ -2,6 +2,7 @@ from django.urls import path
 from .views import *
 
 urlpatterns = [
+    path('', api_overview),
     path('all-books/', get_all_books),
     path('book/<str:pk>/', get_book),
     path('add-book/', add_book),
